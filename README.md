@@ -31,7 +31,7 @@ To manually trigger a backup, you can access the `/backup` endpoint of the appli
 2.  **Enable App Persistence.** In the "Deployment" tab of your app, make sure to enable "App Persistence". This will allow the backup agent to access the data of other apps.
 3.  **Set up Persistent Data Volumes.** For each app that you want to back up, you need to mount its persistent data volume into the backup agent's container. In the "App Configs" tab of the **backup agent app**, go to the "App Persistence" section and add a new volume for each app you want to back up.
 
-    - **Path in App:** This is the path where the app's data will be mounted inside the backup agent's container. It is recommended to use a consistent naming scheme, for example, `/app-name`.
+    - **Path in App:** This is the path where the app's data will be mounted inside the backup agent's container. Only items in the /backup directory will be backed up. Use a consistent naming scheme, for example, `/backup/app-name`.
     - To ensure the backup agent can access the volume data, you must click on the **Set specific host path** button and provide the path to the volume on the host machine. You can typically find the volumes at `/var/lib/docker/volumes/<volume-name>/_data`. For CapRover apps, the volume names usually start with `captain--` followed by the app name and a unique identifier.
 
 4.  **Set the Environment Variables.** In the "App Configs" tab, add the environment variables listed above.
