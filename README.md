@@ -21,6 +21,10 @@ The application is configured through environment variables in the Caprover dash
 - `REMOTE_PATH`: The path on the remote server to store the backups (defaults to `/backup`).
 - `BACKUP_SCHEDULE`: A cron expression for the backup schedule (defaults to `0 2 * * *` - 2 AM daily).
 
+## Manual Backup
+
+To manually trigger a backup, you can access the `/backup` endpoint of the application in your browser. For example, if your application is running at `http://myapp.caprover.my-domain.com`, you can trigger a backup by visiting `http://myapp.caprover.my-domain.com/backup`.
+
 ## Deployment
 
 1.  **Create a new app in CapRover.**
