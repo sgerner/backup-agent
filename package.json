@@ -1,0 +1,13 @@
+{
+    "name": "caprover-backup-agent",
+    "version": "1.0.0",
+    "description": "A CapRover app to backup persistent data to a remote server.",
+    "main": "src/backup.js",
+    "scripts": {
+        "start": "node src/backup.js"
+    },
+    "dependencies": {
+        "node-cron": "^3.0.0",
+        "ssh2-sftp-client": "^9.0.4"
+    }
+}
